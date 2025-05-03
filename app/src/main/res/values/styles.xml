@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+    </style>
+    <!-- Estilos del main -->
+    <style name="AppTheme.texto_main" parent="AppTheme">
+        <item name="android:layout_width">341sp</item>
+        <item name="android:layout_marginTop">51sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white_1</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="AppTheme.boton_main" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">345sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">10sp</item>
+        <item name="android:background">@drawable/rounded_boton</item>
+    </style>
+
+    <style name="AppTheme.text_main" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/verdana_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white_1</item>
+    </style>
+
+    <style name="AppTheme.boton_perfil">
+        <item name="android:layout_width">50sp</item>
+        <item name="android:layout_height">50sp</item>
+        <item name="android:layout_marginTop">20sp</item>
+        <item name="android:layout_marginEnd">20sp</item>
+    </style>
+    <!-- Estilos de las cards -->
+    <style name="AppTheme.titulo_cards">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/azul</item>
+        <item name="android:fontFamily">@font/verdana_bold</item>
+        <item name="android:layout_marginTop">38sp</item>
+        <item name="android:text">"RECURSOS"</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="AppTheme.subtitulo_cards">
+        <item name="android:layout_width">232sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white_1</item>
+        <item name="android:fontFamily">@font/verdana_bold</item>
+        <item name="android:layout_marginStart">21sp</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="AppTheme.sroll_cards">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">141sp</item>
+    </style>
+
+    <style name="AppTheme.sroll_cards_contenedor">
+        <item name="android:layout_width">140sp</item>
+        <item name="android:layout_height">140sp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginStart">20sp</item>
+        <item name="android:background">@drawable/rounded_boton</item>
+        <item name="android:paddingTop">10sp</item>
+        <item name="android:paddingBottom">15sp</item>
+        <item name="android:gravity">center</item>
+
+    </style>
+
+    <style name="AppTheme.sroll_cards_imagen">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="AppTheme.sroll_cards_texto">
+        <item name="android:layout_width">140sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">17sp</item>
+        <item name="fontFamily">@font/verdana_bold</item>
+        <item name="android:textColor">@color/white_1</item>
+        <item name="android:layout_marginTop">6sp</item>
+    </style>
+
+    <!-- Estilos del perfil -->
+    <style name="AppTheme.titulo_perfil">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white_1</item>
+        <item name="android:fontFamily">@font/verdana_bold</item>
+        <item name="android:layout_marginTop">20sp</item>
+        <item name="android:text">"Datos Personales"</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="AppTheme.atras_perfil">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/flecha_atras</item>
+        <item name="android:layout_marginTop">20sp</item>
+        <item name="android:padding">10sp</item>
+
+    </style>
+
+    <style name="AppTheme.contenedor_perfil">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">60sp</item>
+        <item name="android:background">@drawable/rounded_perfil</item>
+        <item name="android:paddingHorizontal">15sp</item>
+        <item name="android:paddingVertical">21sp</item>
+    </style>
+
+    <style name="AppTheme.3er_titulo_perfil">
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white_1</item>
+        <item name="android:layout_marginTop">10sp</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="AppTheme.text_view_perfil" parent="AppTheme">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">12sp</item>
+        <item name="android:textColor">@color/text_view</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5sp</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:background">@drawable/rounded_edit_text</item>
+        <item name="android:maxLength">15</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:paddingVertical">10sp</item>
+    </style>
+
+    <style name="AppTheme.boton_perfil_perfil" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingHorizontal">46sp</item>
+        <item name="android:paddingVertical">8sp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/verdana_bold</item>
+        <item name="android:textColor">@color/borde_boton_rojo</item>
+        <item name="background">@drawable/rounded_boton</item>
+        <item name="android:layout_marginTop">20sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="AppTheme.anillos" parent="AppTheme">
+        <item name="android:layout_marginTop">270sp</item>
+        <item name="android:background">@drawable/anillo</item>
+    </style>
+
+    <style name="AppTheme.menu" parent="AppTheme">
+        <item name="android:paddingVertical">8sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">145sp</item>
+
+    </style>
+
+    <style name="AppTheme.pop_ups_titulo" parent="AppTheme">
+        <item name="fontFamily">@font/verdana_bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/borde_boton_rojo</item>
+
+    </style>
+
+    <style name="AppTheme.pop_ups_number_card" parent="AppTheme">
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/borde_boton_rojo</item>
+        <item name="android:padding">5sp</item>
+
+    </style>
+
+    <style name="AppTheme.text_card" parent="AppTheme">
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">310sp</item>
+        <item name="android:textColor">@color/borde_boton_rojo</item>
+        <item name="android:paddingStart">10sp</item>
+        <item name="android:paddingTop">5sp</item>
+
+    </style>
+
+    <style name="AppTheme.img_card" parent="AppTheme">
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_height">337sp</item>
+        <item name="android:layout_width">310sp</item>
+        <item name="android:textColor">@color/borde_boton_rojo</item>
+        <item name="android:layout_marginTop">20sp</item>
+        <item name="background">@drawable/rounded_pop_up</item>
+    </style>
+
+    <style name="AppTheme.text_2_card" parent="AppTheme">
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:layout_marginTop">10sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white_1</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="AppTheme.distancia" parent="AppTheme">
+        <item name="android:layout_height">22sp</item>
+        <item name="android:layout_width">50sp</item>
+        <item name="android:textColor">@color/boton_general</item>
+        <item name="android:background">@drawable/rounded_distancia</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="AppTheme.check" parent="AppTheme">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:paddingHorizontal">5sp</item>
+    </style>
+</resources>

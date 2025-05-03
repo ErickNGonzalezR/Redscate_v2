@@ -1,0 +1,67 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="340dp"
+        android:layout_height="195dp"
+        android:background="@drawable/rounded_pop_up"
+        android:padding="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/title_cards"
+            style="@style/AppTheme.pop_ups_titulo"
+            android:fontFamily="@font/verdana_bold"
+            android:text="¡Atención! "
+            android:textColor="#0DB11B"
+            android:textSize="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/texts_cards"
+            style="@style/AppTheme.text_card"
+            android:fontFamily="@font/roboto_regular"
+            android:text="¿Desea iniciar el protocolo de autoprotección?"
+            android:textSize="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_cards" />
+
+        <TextView
+            android:id="@+id/button_si"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_boton_verde"
+            android:fontFamily="@font/verdana_bold"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="13dp"
+            android:text="SI"
+            android:textColor="@color/white_1"
+            android:textSize="17dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
+            android:id="@+id/button_no"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_boton"
+            android:fontFamily="@font/verdana_bold"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="13dp"
+            android:text="NO"
+            android:textColor="@color/white_1"
+            android:textSize="17dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

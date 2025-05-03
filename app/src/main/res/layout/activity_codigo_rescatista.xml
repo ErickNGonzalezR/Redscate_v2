@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CodigoRescatista">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+          <ImageView
+              android:id="@+id/atras"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:src="@drawable/atras"
+              android:layout_margin="20dp"/>
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="127dp"
+            app:srcCompat="@drawable/logo_redscate" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:fontFamily="@font/roboto_slab_bold"
+            android:text="REDSCATE"
+            android:textColor="@color/white_1"
+            android:textSize="36dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="34dp"
+            android:layout_marginTop="34dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/AppTheme.texto_main"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="10dp"
+                android:text="Código de rescatista"
+                android:textSize="18dp"
+
+                />
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="17dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/escudo_negro_blanco" />
+        </LinearLayout>
+
+
+        <EditText
+            android:id="@+id/codigo_rescatista"
+            style="@style/AppTheme.texto_main"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/rounded_edit_text"
+            android:hint="Nombre"
+            android:maxLength="15"
+            android:paddingVertical="8dp"
+            android:paddingLeft="12dp"
+            android:singleLine="true"
+            android:textColorHint="@color/white_1"
+            android:textSize="16dp"
+
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/ingresar"
+            style="@style/AppTheme.boton_main"
+            android:layout_marginTop="12dp"
+            android:elevation="6dp"
+            android:translationZ="8dp"
+            app:cornerRadius="10dp"
+            app:strokeColor="@color/white_1"
+            app:strokeWidth="3dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
