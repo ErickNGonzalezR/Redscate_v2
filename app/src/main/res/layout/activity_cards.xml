@@ -10,203 +10,232 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black_1">
+        android:background="@color/black_1"
+        android:orientation="vertical">
 
-
-        <com.example.redscate.BotonPerfil
-            android:id="@+id/botonPerfil"
-            style="@style/AppTheme.boton_perfil"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            style="@style/AppTheme.titulo_cards"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            style="@style/AppTheme.subtitulo_cards"
-            android:layout_marginTop="80sp"
-            android:text="Acciones preventivas frente a incendios"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <HorizontalScrollView
-            style="@style/AppTheme.sroll_cards"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="140sp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:id="@+id/button_reaccion_campo"
-                    style="@style/AppTheme.sroll_cards_contenedor"
-                    android:clickable="true"
-                    android:focusable="true">
-
-                    <ImageView
-                        style="@style/AppTheme.sroll_cards_imagen"
-                        android:src="@drawable/r_campo" />
-
-                    <TextView
-                        style="@style/AppTheme.sroll_cards_texto"
-                        android:text="Reacción en campo" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/button_reaccion_ciudad"
-                    style="@style/AppTheme.sroll_cards_contenedor">
-
-                    <ImageView
-                        style="@style/AppTheme.sroll_cards_imagen"
-                        android:src="@drawable/r_ciudad" />
-
-                    <TextView
-                        style="@style/AppTheme.sroll_cards_texto"
-                        android:text="Reacción en ciudad" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/button_reaccion_casa"
-                    style="@style/AppTheme.sroll_cards_contenedor">
-
-                    <ImageView
-                        style="@style/AppTheme.sroll_cards_imagen"
-                        android:src="@drawable/r_casa" />
-
-                    <TextView
-                        style="@style/AppTheme.sroll_cards_texto"
-                        android:text="Reacción en casa" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/button_reaccion_trabajo"
-                    style="@style/AppTheme.sroll_cards_contenedor"
-                    android:layout_width="155sp">
-
-                    <ImageView
-                        style="@style/AppTheme.sroll_cards_imagen"
-                        android:src="@drawable/r_trabajo" />
-
-                    <TextView
-                        style="@style/AppTheme.sroll_cards_texto"
-                        android:text="Reacción en el trabajo" />
-                </LinearLayout>
-            </LinearLayout>
-        </HorizontalScrollView>
-
-        <TextView
-            style="@style/AppTheme.subtitulo_cards"
-            android:layout_marginTop="301sp"
-            android:text="Kit de emergencia"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <LinearLayout
-            android:id="@+id/button_kit_emergencia"
-            style="@style/AppTheme.sroll_cards_contenedor"
-            android:layout_marginTop="335sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                style="@style/AppTheme.sroll_cards_imagen"
-                android:src="@drawable/k_emergencia" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="90dp">
 
             <TextView
-                style="@style/AppTheme.sroll_cards_texto"
-                android:text="Kit de emergencia" />
-        </LinearLayout>
+                style="@style/AppTheme.titulo_cards"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            style="@style/AppTheme.subtitulo_cards"
-            android:layout_marginTop="504sp"
-            android:text="Guías de aprendizaje"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <com.example.redscate.BotonPerfil
+                android:id="@+id/botonPerfil"
+                style="@style/AppTheme.boton_perfil"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            app:layout_constraintTop_toBottomOf="@+id/header"
+            app:layout_constraintBottom_toTopOf="@+id/footer"
+            android:id="@+id/body"
+            android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
-            android:layout_height="140sp"
-            android:layout_marginTop="533sp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="0dp">
 
-            <LinearLayout
-                android:id="@+id/button_partes_extintor"
-                style="@style/AppTheme.sroll_cards_contenedor">
-
-                <ImageView
-                    style="@style/AppTheme.sroll_cards_imagen"
-                    android:src="@drawable/p_extintor" />
-
-                <TextView
-                    style="@style/AppTheme.sroll_cards_texto"
-                    android:text="Partes del extintor" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/button_tipos_fuego"
-                style="@style/AppTheme.sroll_cards_contenedor">
-
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+              >
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="bottom"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/t_extintor_1" />
+                    <TextView
+                        style="@style/AppTheme.subtitulo_cards"
+                        android:text="Acciones preventivas frente a incendios" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="7sp"
-                        android:src="@drawable/t_extintor_2" />
+                    <HorizontalScrollView
+                        style="@style/AppTheme.sroll_cards"
+                        android:layout_marginVertical="25dp">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/t_extintor_3" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/button_reaccion_campo"
+                                style="@style/AppTheme.sroll_cards_contenedor"
+                                android:clickable="true"
+                                android:focusable="true">
+
+                                <ImageView
+                                    style="@style/AppTheme.sroll_cards_imagen"
+                                    android:src="@drawable/r_campo" />
+
+                                <TextView
+                                    style="@style/AppTheme.sroll_cards_texto"
+                                    android:text="Reacción en campo" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/button_reaccion_ciudad"
+                                style="@style/AppTheme.sroll_cards_contenedor">
+
+                                <ImageView
+                                    style="@style/AppTheme.sroll_cards_imagen"
+                                    android:src="@drawable/r_ciudad" />
+
+                                <TextView
+                                    style="@style/AppTheme.sroll_cards_texto"
+                                    android:text="Reacción en ciudad" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/button_reaccion_casa"
+                                style="@style/AppTheme.sroll_cards_contenedor">
+
+                                <ImageView
+                                    style="@style/AppTheme.sroll_cards_imagen"
+                                    android:src="@drawable/r_casa" />
+
+                                <TextView
+                                    style="@style/AppTheme.sroll_cards_texto"
+                                    android:text="Reacción en casa" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/button_reaccion_trabajo"
+                                style="@style/AppTheme.sroll_cards_contenedor"
+                                android:layout_width="155dp">
+
+                                <ImageView
+                                    style="@style/AppTheme.sroll_cards_imagen"
+                                    android:src="@drawable/r_trabajo" />
+
+                                <TextView
+                                    style="@style/AppTheme.sroll_cards_texto"
+                                    android:text="Reacción en el trabajo" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                    <TextView
+                        style="@style/AppTheme.subtitulo_cards"
+                        android:text="Kit de emergencia" />
+
+                    <LinearLayout
+                        android:layout_marginVertical="25dp"
+                        android:id="@+id/button_kit_emergencia"
+                        style="@style/AppTheme.sroll_cards_contenedor"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            style="@style/AppTheme.sroll_cards_imagen"
+                            android:src="@drawable/k_emergencia" />
+
+                        <TextView
+                            style="@style/AppTheme.sroll_cards_texto"
+                            android:text="Kit de emergencia" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/AppTheme.subtitulo_cards"
+                        android:text="Guías de aprendizaje"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_marginTop="25dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:id="@+id/button_partes_extintor"
+                            style="@style/AppTheme.sroll_cards_contenedor">
+
+                            <ImageView
+                                style="@style/AppTheme.sroll_cards_imagen"
+                                android:src="@drawable/p_extintor" />
+
+                            <TextView
+                                style="@style/AppTheme.sroll_cards_texto"
+                                android:text="Partes del extintor" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/button_tipos_fuego"
+                            style="@style/AppTheme.sroll_cards_contenedor">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="bottom"
+                                android:orientation="horizontal">
+
+
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="7dp"
+                                    android:src="@drawable/t_extintor_2" />
+
+                            </LinearLayout>
+
+
+                            <TextView
+                                style="@style/AppTheme.sroll_cards_texto"
+                                android:text="Tipos de extintores" />
+                        </LinearLayout>
+                    </LinearLayout>
                 </LinearLayout>
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-                <TextView
-                    style="@style/AppTheme.sroll_cards_texto"
-                    android:text="Tipos de extintores" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/footer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24sp"
-            android:layout_marginBottom="58sp"
-            android:background="@drawable/rounded_boton_menu"
-            android:gravity="center"
-            android:paddingVertical="8sp"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
 
-            <ImageView
-                style="@style/AppTheme.menu"
-                android:src="@drawable/icono_recursos_azul" />
+            <LinearLayout
+                android:id="@+id/navbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:background="@drawable/rounded_boton_menu"
+                android:gravity="center"
+                android:paddingVertical="8dp"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/radar"
-                style="@style/AppTheme.menu"
-                android:src="@drawable/radar" />
+                <ImageView
+                    style="@style/AppTheme.menu"
+                    android:src="@drawable/icono_recursos_azul" />
 
-        </LinearLayout>
-
+                <ImageView
+                    android:id="@+id/radar"
+                    style="@style/AppTheme.menu"
+                    android:src="@drawable/radar" />
+            </LinearLayout>
+            <TextView app:layout_constraintTop_toBottomOf="@+id/navbar"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Versión  2.0"
+                android:textSize="16sp"
+                android:textColor="@color/white_1"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <View
             android:id="@+id/blur_background"
             android:layout_width="match_parent"

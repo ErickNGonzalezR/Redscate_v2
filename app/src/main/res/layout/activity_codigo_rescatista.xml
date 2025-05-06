@@ -7,93 +7,108 @@
     android:layout_height="match_parent"
     tools:context=".CodigoRescatista">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black_1"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:background="@color/black_1">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <com.example.redscate.BotonPerfil
+            android:id="@+id/botonPerfil"
+            style="@style/AppTheme.boton_perfil"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-          <ImageView
-              android:id="@+id/atras"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:src="@drawable/atras"
-              android:layout_margin="20dp"/>
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/AppTheme.titulo_cards"
+            android:text="RESCATISTA"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        </LinearLayout>
+        <ImageView
+            android:layout_width="320dp"
+            android:layout_height="320dp"
+            android:layout_marginTop="150dp"
+            android:background="@drawable/anillo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+
+            android:layout_marginTop="190dp"
+            android:background="@drawable/anillo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:layout_width="160dp"
             android:layout_height="160dp"
-            android:layout_marginTop="127dp"
-            app:srcCompat="@drawable/logo_redscate" />
+            android:layout_marginTop="230dp"
+            android:background="@drawable/anillo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+        <ImageView
+            android:id="@+id/cincuentametros"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="270dp"
+            android:background="@drawable/anillo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+       <!-- <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="23dp"
-            android:fontFamily="@font/roboto_slab_bold"
-            android:text="REDSCATE"
-            android:textColor="@color/white_1"
-            android:textSize="36dp" />
-
+            android:background="@drawable/anillo"
+            android:src="@drawable/brujula"
+            app:layout_constraintBottom_toBottomOf="@id/cincuentametros"
+            app:layout_constraintEnd_toEndOf="@id/cincuentametros"
+            app:layout_constraintStart_toStartOf="@id/cincuentametros"
+            app:layout_constraintTop_toTopOf="@+id/cincuentametros" />
+-->
         <LinearLayout
+            android:id="@+id/btn_sos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginHorizontal="34dp"
-            android:layout_marginTop="34dp"
-            android:orientation="horizontal">
+            android:layout_marginHorizontal="24dp"
+            android:background="@drawable/rounded_boton_verde"
+            android:gravity="center"
+            android:paddingVertical="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="150dp"
+            android:clickable="true">
 
-            <TextView
-                style="@style/AppTheme.texto_main"
+    <!--        <ImageView
                 android:layout_width="wrap_content"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="10dp"
-                android:text="Código de rescatista"
-                android:textSize="18dp"
-
-                />
-
+                android:layout_height="wrap_content"
+                android:src="@drawable/izquierda" />
+-->
+            <TextView
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/verdana_bold"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="EMPEZAR A BUSCAR"
+                android:textColor="@color/borde_boton_rojo"
+                android:textSize="30dp" />
+<!--
             <ImageView
-                android:layout_width="18dp"
-                android:layout_height="17dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="4dp"
-                android:src="@drawable/escudo_negro_blanco" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/derecha" />-->
+
         </LinearLayout>
 
-
-        <EditText
-            android:id="@+id/codigo_rescatista"
-            style="@style/AppTheme.texto_main"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/rounded_edit_text"
-            android:hint="Nombre"
-            android:maxLength="15"
-            android:paddingVertical="8dp"
-            android:paddingLeft="12dp"
-            android:singleLine="true"
-            android:textColorHint="@color/white_1"
-            android:textSize="16dp"
-
-            />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/ingresar"
-            style="@style/AppTheme.boton_main"
-            android:layout_marginTop="12dp"
-            android:elevation="6dp"
-            android:translationZ="8dp"
-            app:cornerRadius="10dp"
-            app:strokeColor="@color/white_1"
-            app:strokeWidth="3dp" />
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

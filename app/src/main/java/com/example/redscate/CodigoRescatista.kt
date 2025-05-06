@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -14,6 +15,7 @@ import com.google.android.material.button.MaterialButton
 class CodigoRescatista : AppCompatActivity() {
     private lateinit var etCodigo: EditText
     private lateinit var btnIngresar: MaterialButton
+    private lateinit var btnAyuda :LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,40 +26,11 @@ class CodigoRescatista : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        btnIngresar = findViewById(R.id.ingresar)
-        etCodigo = findViewById(R.id.codigo_rescatista)
-
-        val btnAtras = findViewById<ImageView>(R.id.atras)
-
-        btnAtras.setOnClickListener {
-            onBackPressedDispatcher.onBackPressed()
+        btnAyuda = findViewById(R.id.btn_sos)
+        btnAyuda.setOnClickListener{
+            val intent = Intent(this, RadarRescatista::class.java)
+            startActivity(intent)
         }
 
-        etCodigo.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus) {
-                etCodigo.setBackgroundResource(R.drawable.rounded_edit_text_azul) // Cambia el fondo al enfocar
-            } else {
-                etCodigo.setBackgroundResource(R.drawable.rounded_edit_text) // Vuelve al fondo normal
-            }
-        }
-        btnIngresar.setOnClickListener {
-            ClickBtnIngrsar()
-        }
-    }
-
-    fun ClickBtnIngrsar() {
-        val codigo = etCodigo.text.toString()
-        if (codigo != "") {
-            Rescatista()
-        } else {
-            etCodigo.setBackgroundResource(R.drawable.rounded_edit_text_rojo) // Cambia el fondo al enfocar
-            etCodigo.hint = "Por favor completa la casilla"
-            etCodigo.setHintTextColor(ContextCompat.getColor(this, R.color.rojo))
-        }
-    }
-
-    fun Rescatista() {
-        val intent = Intent(this, MapaRescatista::class.java)
-        startActivity(intent)
     }
 }

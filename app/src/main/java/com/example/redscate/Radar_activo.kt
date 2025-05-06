@@ -110,6 +110,7 @@ class Radar_activo : AppCompatActivity(), SensorEventListener {
     }
 
     @RequiresPermission(allOf = [Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION])
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -366,10 +367,23 @@ class Radar_activo : AppCompatActivity(), SensorEventListener {
 
     // Guarda el mensaje y lo envia al momento de oprimir el botón
     fun exqListener() {
+        tresPuntos = findViewById(R.id.tres_puntos_1)
+        tresPuntos2 = findViewById(R.id.tres_puntos_2)
+        check1 = findViewById(R.id.check_1)
+        check2 = findViewById(R.id.check_2)
+        check3 = findViewById(R.id.check_3)
+
+        check1.setImageResource(R.drawable.check_verde)
+        check2.setImageResource(R.drawable.reloj)
+        check3.setImageResource(R.drawable.check_gris)
+        tresPuntos.setImageResource(R.drawable.tres_puntos_verdes)
+        tresPuntos2.setImageResource(R.drawable.tres_puntos_amarrillo)
+        mensajeEnviado = findViewById(R.id.mensaje_enviado)
+        mensajeEnviado.text = "Buscando rescatistas cercanos"
         val sharedPreferences = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
         val nombre = sharedPreferences.getString("nombre", "Valor por defecto")
-        var message = "1,$lat,$lon,$nombre"
-        Toast.makeText(applicationContext, "Mensaje enviado" + message, Toast.LENGTH_LONG).show()
+        var message = "0,$lat,$lon,$nombre"
+        //Toast.makeText(applicationContext, "Mensaje enviado" + message, Toast.LENGTH_LONG).show()
 
         messages.add(message.trim() + " - Hora de envío: " + getFormattedDateTime())
         saveMessage(message)
@@ -450,11 +464,24 @@ class Radar_activo : AppCompatActivity(), SensorEventListener {
                     )
         ) {
 
-            Toast.makeText(
+            tresPuntos = findViewById(R.id.tres_puntos_1)
+            tresPuntos2 = findViewById(R.id.tres_puntos_2)
+            check1 = findViewById(R.id.check_1)
+            check2 = findViewById(R.id.check_2)
+            check3 = findViewById(R.id.check_3)
+            check1.setImageResource(R.drawable.check_gris)
+            check2.setImageResource(R.drawable.check_gris)
+            check3.setImageResource(R.drawable.check_gris)
+            tresPuntos.setImageResource(R.drawable.tres_puntos_gris)
+            tresPuntos2.setImageResource(R.drawable.tres_puntos_gris)
+            mensajeEnviado = findViewById(R.id.mensaje_enviado)
+
+            mensajeEnviado.text = "Falta permiso de dispositivos cerca\nPor favor Activarlo!!! Y VUELVE A ABRIR LA APLICACION"
+            /*Toast.makeText(
                 this,
-                "Falta pormiso de dispositivos cerca Por favor Activarlo",
+                ,
                 Toast.LENGTH_SHORT
-            ).show()
+            ).show()*/
             return
         }
         mManager.addLocalService(mChannel, serviceInfo, object : WifiP2pManager.ActionListener {
@@ -463,7 +490,9 @@ class Radar_activo : AppCompatActivity(), SensorEventListener {
             }
 
             override fun onFailure(arg0: Int) {
-                // Command failed.  Check for P2P_UNSUPPORTED, ERROR, or BUSY
+                // Command failed.  Check for P2P_UNSUPPORTED,  , or BUSY
+                mensajeEnviado = findViewById(R.id.mensaje_enviado)
+                mensajeEnviado.text = "Falla el servicio local"
                 //Toast.makeText(this@MainActivity, "Fail local service", Toast.LENGTH_SHORT).show()
             }
         })
@@ -486,6 +515,18 @@ class Radar_activo : AppCompatActivity(), SensorEventListener {
                 }
 
                 override fun onFailure(code: Int) {
+                    tresPuntos = findViewById(R.id.tres_puntos_1)
+                    tresPuntos2 = findViewById(R.id.tres_puntos_2)
+                    check1 = findViewById(R.id.check_1)
+                    check2 = findViewById(R.id.check_2)
+                    check3 = findViewById(R.id.check_3)
+                    check1.setImageResource(R.drawable.check_gris)
+                    check2.setImageResource(R.drawable.check_gris)
+                    check3.setImageResource(R.drawable.check_gris)
+                    tresPuntos.setImageResource(R.drawable.tres_puntos_gris)
+                    tresPuntos2.setImageResource(R.drawable.tres_puntos_gris)
+                    mensajeEnviado = findViewById(R.id.mensaje_enviado)
+                    mensajeEnviado.text = "No se puede enviar los datos \n POR FAVOR ENCIENDE EL WI FI Y VUELVE A ABRIR LA APLICACION"
                     //Toast.makeText(this@MainActivity, "Failure addService", Toast.LENGTH_SHORT).show()
                     Log.e(TAG_WIFI, "Add service request has failed. $code")
                 }
@@ -537,9 +578,12 @@ class Radar_activo : AppCompatActivity(), SensorEventListener {
             var rol = partes[0]
             var lat_1 = partes[1].toDouble()
             var lon_1 = partes[2].toDouble()
+            var nombre_1 = partes[3]
 
             var distancia = calcularDistancia(lat, lon, lat_1, lon_1)
-
+            if (lat_1 == 0.0){
+                distancia = 300.0f
+            }
 
             var imgBrujula = findViewById<ImageView>(R.id.compas_imageView)
 
@@ -566,6 +610,7 @@ class Radar_activo : AppCompatActivity(), SensorEventListener {
             }
 
             if (rol == "1") {
+
                 check1.setImageResource(R.drawable.check_verde)
                 check2.setImageResource(R.drawable.check_verde)
                 check3.setImageResource(R.drawable.check_verde)
@@ -573,7 +618,8 @@ class Radar_activo : AppCompatActivity(), SensorEventListener {
                 tresPuntos2.setImageResource(R.drawable.tres_puntos_verdes)
 
                 mensajeE = findViewById(R.id.mensaje_enviado)
-                mensajeE.text = "Rescatista encontrado"
+                nombre_1.uppercase()
+                mensajeE.text = "Rescatista $nombre_1 encontrado"
                 if (nivelActivo != -1) {
                     textos.forEachIndexed { index, textView ->
                         if (index == nivelActivo) {
@@ -611,7 +657,8 @@ class Radar_activo : AppCompatActivity(), SensorEventListener {
                     checkContainer.visibility = View.GONE
                     checkContainer_2.visibility = View.VISIBLE
                     var dis = distancia.toInt()
-                    distanciaMensaje.text = "RESCATISTA A $dis METROS APROXIMADAMENTE"
+
+                    distanciaMensaje.text = "RESCATISTA $nombre_1 A $dis METROS APROXIMADAMENTE"
 
                     sonido.setOnClickListener {
                         val volumenMaximo = audioManager?.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
@@ -640,7 +687,7 @@ class Radar_activo : AppCompatActivity(), SensorEventListener {
                     checkContainer_2.visibility = View.GONE
                 }
             } else{
-                Toast.makeText(this@Radar_activo, "Hay sobrevivientes cerca !!!", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this@Radar_activo, "Hay sobrevivientes cerca !!!", Toast.LENGTH_SHORT).show()
 
             }
 

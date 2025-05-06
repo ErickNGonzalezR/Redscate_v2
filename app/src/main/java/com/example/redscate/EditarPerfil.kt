@@ -3,6 +3,8 @@ package com.example.redscate
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -16,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.bumptech.glide.Glide
 
 class EditarPerfil : AppCompatActivity() {
 
@@ -102,7 +105,6 @@ class EditarPerfil : AppCompatActivity() {
             if (opcionSeleccionada in rhOptions) {
                 // Persistencia de datos
                 editor.putString("nombre", nombre)
-                editor.putString("perfil", "0") // 0 = perfil Usuario
                 editor.putString("edad", age)
                 editor.putString("rh", opcionSeleccionada)
                 editor.putString("nombreContacto", contactName)
@@ -110,6 +112,19 @@ class EditarPerfil : AppCompatActivity() {
                 editor.apply()
 
                 val intent = Intent(this, Perfil::class.java)
+                val gifExito = findViewById<ImageView>(R.id.gifExito)
+
+                gifExito.visibility = View.VISIBLE
+
+                Glide.with(this)
+                    .asGif()
+                    .load(R.drawable.perfil_editado)
+                    .into(gifExito)
+
+// Ocultar el GIF después de unos segundos
+                Handler(Looper.getMainLooper()).postDelayed({
+                    gifExito.visibility = View.GONE
+                }, 5000) // por ejemplo, 2 segundos
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "❌ RH inválido. Selecciona de la lista.", Toast.LENGTH_SHORT)

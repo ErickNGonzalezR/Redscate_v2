@@ -96,30 +96,39 @@ class Cards_1(private val activity: Activity) {
         buttonAtras.visibility = if (botonSecundario > 1) View.VISIBLE else View.GONE
 
         val contenido = when (botonSecundario) {
-            1 -> PopupContent(
-                numero = "1.",
-                texto = "Evita las zonas con pendientes, los filos de montaña y valles estrechos, ya que el aire caliente tiende a ascender.",
+            1 -> {
+                imagen.setImageResource(R.drawable.r_campo_1)
+                PopupContent(
+                    numero = "",
+                    texto = "Evita las zonas con pendientes, los filos de montaña y valles estrechos, ya que el aire caliente tiende a ascender.",
+                    subTitulo = ""
+
+                )
+            }
+            2 ->{
+                imagen.setImageResource(R.drawable.r_campo_2)
+                PopupContent(
+                numero = "",
+                texto = "Evita refugiarte en pozos o cuevas, ya que el oxigeno se te podría acabar rápidamente.",
                 subTitulo = ""
-            )
+            )}
 
-            2 -> PopupContent(
-                numero = "2.",
-                texto = "Evita refugiarte en pozos o cuevas, ya que el oxígeno se te podría acabar rápidamente.",
-                subTitulo = ""
-            )
-
-            3 -> PopupContent(
-                numero = "3.",
-                texto = "No realices fogatas ni asados en temporada de verano ya que el pasto estará seco y subirá el riesgo de provocar un incendio forestal.",
-                subTitulo = "Tener en cuenta"
-            )
-
-            4 -> PopupContent(
-                numero = "4.",
-                texto = "No arrojes las colillas de los cigarrillos en zonas verdes. Esto puede expandir aún más el incendio en caso de que ocurra.",
-                subTitulo = "Tener en cuenta"
-            )
-
+            3 -> {
+                imagen.setImageResource(R.drawable.r_campo_3)
+                PopupContent(
+                    numero = "",
+                    texto = "No realices fogatas ni asados en temporada de verano ya que el pasto estará seco y subirá el riesgo de provocar un incendio forestal.",
+                    subTitulo = "Tener en cuenta"
+                )
+            }
+            4 -> {
+                imagen.setImageResource(R.drawable.r_campo_4)
+                PopupContent(
+                    numero = "",
+                    texto = "No arrojes las colillas de los cigarrillos en zonas verdes. Esto puede expandir aún más el incendio en caso de que ocurra.",
+                    subTitulo = "Tener en cuenta"
+                )
+            }
             else -> return
         }
 
@@ -204,25 +213,31 @@ class Cards_1(private val activity: Activity) {
         buttonAtras.visibility = if (botonSecundario > 1) View.VISIBLE else View.GONE
 
         val contenido = when (botonSecundario) {
-            1 -> PopupContent(
-                numero = "1.",
-                texto = "Dirígete a la zona de menor riesgo donde logres llamar al 123 en cuanto puedas.",
-                subTitulo = "Llamada a emergencias"
-                //imagen.setImageResource(R.drawable.reaccion_cuidad_image_1)
-            )
+            1 -> {
+                imagen.setImageResource(R.drawable.r_ciudad_1)
+                PopupContent(
+                    numero = "",
+                    texto = "Dirígete a la zona de menor riesgo donde logres llamar al 123 en cuanto puedas.",
+                    subTitulo = "Llamada a emergencias"
 
-            2 -> PopupContent(
-                numero = "2.",
-                texto = "Da una voz de alerta a las personas que estén cerca del incendio.",
-                subTitulo = "Alerta a la ciudadanía"
-            )
-
-            3 -> PopupContent(
-                numero = "3.",
-                texto = "identifica el objeto que provocó el incendio para informar a las autoridades. (identifícalo sin colocar tu vida en riesgo.)",
-                subTitulo = "Identifica razón del incendio"
-            )
-
+                )
+            }
+            2 -> {
+                imagen.setImageResource(R.drawable.r_ciudad_2)
+                PopupContent(
+                    numero = "",
+                    texto = "Da una voz de alerta a las personas que estén cerca del incendio.",
+                    subTitulo = "Alerta a la ciudadanía"
+                )
+            }
+            3 -> {
+                imagen.setImageResource(R.drawable.r_ciudad_3)
+                PopupContent(
+                    numero = "",
+                    texto = "identifica el objeto que provocó el incendio para informar a las autoridades. (identifícalo sin colocar tu vida en riesgo.)",
+                    subTitulo = "Identifica razón del incendio"
+                )
+            }
             else -> return
         }
 
@@ -269,19 +284,19 @@ class Cards_1(private val activity: Activity) {
 
         buttonSiguiente.setOnClickListener {
             botonSecundario++
-            if (botonSecundario == 4) {
+            if (botonSecundario == 5) {
                 buttonSiguiente.visibility = View.GONE
                 buttonFinalizar.visibility = View.VISIBLE
 
             }
             buttonFinalizar.setOnClickListener {
                 botonSecundario++
-                if (botonSecundario == 4) {
+                if (botonSecundario == 5) {
                     buttonSiguiente.visibility = View.GONE
                     buttonFinalizar.visibility = View.VISIBLE
 
                 }
-                if (botonSecundario == 5) {
+                if (botonSecundario == 6) {
                     popupWindow.dismiss()
                     botonSecundario = 1
                     buttonFinalizar.visibility = View.GONE
@@ -300,30 +315,46 @@ class Cards_1(private val activity: Activity) {
         buttonAtras.visibility = if (botonSecundario > 1) View.VISIBLE else View.GONE
 
         val contenido = when (botonSecundario) {
-            1 -> PopupContent(
-                numero = "1.",
-                texto = "Si estás cocinando y se quema tu comida, trata de colocarle una tapa encima para parar el incendio.",
-                subTitulo = "Evíta que el humo se expanda"
-            )
-
-            2 -> PopupContent(
-                numero = "2.",
-                texto = "Ubíca las salidas de emergencia de donde vives para evacuar eficientemente en caso de incendio.",
-                subTitulo = "Salidas de emergencia"
-            )
-
-            3 -> PopupContent(
-                numero = "3.",
-                texto = "Dirígete a la zona de menor riesgo donde logres llamar al 123 en cuanto puedas.",
-                subTitulo = "Llamada a emergencias"
-            )
-
-            4 -> PopupContent(
-                numero = "4.",
-                texto = "Tapate la boca y nariz con un paño humedo para que no te afecte el humo.",
-                subTitulo = "Protégete del humo"
-            )
-
+            1 -> {
+                imagen.setImageResource(R.drawable.r_casa_1)
+                PopupContent(
+                    numero = "",
+                    texto = "Si estás cocinando y se quema tu comida, trata de colocarle una tapa encima para parar el incendio.",
+                    subTitulo = "Evíta que el humo se expanda"
+                )
+            }
+            2 -> {
+                imagen.setImageResource(R.drawable.r_casa_2)
+                PopupContent(
+                    numero = "",
+                    texto = "Desconecta los cargadores que no uses. Podrían sobrecalentarse y provocar un incendio. ¡Desconéctalos siempre!",
+                    subTitulo = ""
+                )
+            }
+            3 -> {
+                imagen.setImageResource(R.drawable.r_casa_3)
+                PopupContent(
+                    numero = "",
+                    texto = "Ubica las salidas de emergencia de donde vives para evacuar eficientemente en caso de incendio.",
+                    subTitulo = "Salidas de emergencia"
+                )
+            }
+            4 -> {
+                imagen.setImageResource(R.drawable.r_casa_4)
+                PopupContent(
+                    numero = "",
+                    texto = "Dirígete a la zona de menor riesgo donde logres llamar al 123 en cuanto puedas.",
+                    subTitulo = "Llamada a emergencias"
+                )
+            }
+            5 -> {
+                imagen.setImageResource(R.drawable.r_casa_5)
+                PopupContent(
+                    numero = "",
+                    texto = "Tapate la boca y nariz con un paño húmedo para que no te afecte el humo.",
+                    subTitulo = "Protégete del humo"
+                )
+            }
             else -> return
         }
 
@@ -371,12 +402,14 @@ class Cards_1(private val activity: Activity) {
         buttonAtras.visibility = if (botonSecundario > 1) View.VISIBLE else View.GONE
 
         val contenido = when (botonSecundario) {
-            1 -> PopupContent(
-                numero = "",
-                texto = "Conoce las partes del extintor para actuar rápida y correctamente en caso de emergencia.",
-                subTitulo = ""
-            )
-
+            1 -> {
+                imagen.setImageResource(R.drawable.p_extintor_1)
+                PopupContent(
+                    numero = "",
+                    texto = "Conoce las partes del extintor para actuar rápida y correctamente en caso de emergencia.",
+                    subTitulo = ""
+                )
+            }
 
             else -> return
         }

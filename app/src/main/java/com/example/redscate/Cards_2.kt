@@ -5,15 +5,11 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity.LAYOUT_INFLATER_SERVICE
-import androidx.appcompat.widget.AppCompatButton
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.content.ContextCompat.getSystemService
-import androidx.transition.Visibility
 
 class Cards_2(private val activity: Activity) {
 
@@ -112,20 +108,29 @@ class Cards_2(private val activity: Activity) {
         buttonAtras.visibility = if (botonSecundario > 1) View.VISIBLE else View.GONE
 
         val contenido = when (botonSecundario) {
-            1 -> PopupContent(
+            1 -> {
+                imagen1.setImageResource(R.drawable.r_trabajo_1)
+                imagen2.setImageResource(R.drawable.r_trabajo_2)
+                PopupContent(
                 textoP = "Aquí encontrarás una breve descripción de cada reacción ante un incendio en tu trabajo y cómo actuar de la mejor manera.",
                 subTitulo1 = "Humo en el aire",
                 texto1 = "Si hay humo, arrástrate por el suelo y cubre boca y nariz con un trapo húmedo." ,
                 subTitulo2 = "No elevadores",
                 texto2 = "No uses los ascensores en emergencias; usa siempre las escaleras para evacuar el edificio."
             )
-            2 -> PopupContent(
+            }
+
+            2 -> {
+                imagen1.setImageResource(R.drawable.r_trabajo_3)
+                imagen2.setImageResource(R.drawable.r_trabajo_4)
+                PopupContent(
                 textoP = "",
                 subTitulo1 = "Cuidado con las quemaduras",
                 texto1 = "Antes de abrir una puerta, toca la manija; si está caliente, podría haber fuego del otro lado." ,
                 subTitulo2 = "Da voz de alerta",
                 texto2 = "Si ves humo en un pasillo del trabajo, alerta de inmediato a todas las personas."
-            )
+                )
+            }
             else -> return
         }
 
@@ -214,6 +219,9 @@ class Cards_2(private val activity: Activity) {
 
         val contenido = when (botonSecundario) {
             1 -> {
+
+                imagen1.setImageResource(R.drawable.t_extintores_1)
+                imagen2.setImageResource(R.drawable.t_extintores_2)
                 text.visibility=View.VISIBLE
                 imagen_2.visibility=View.VISIBLE
                 PopupContent(
@@ -227,6 +235,8 @@ class Cards_2(private val activity: Activity) {
                 )
             }
             2 -> {
+                imagen1.setImageResource(R.drawable.t_extintores_3)
+                imagen2.setImageResource(R.drawable.t_extintores_4)
                 text.visibility=View.VISIBLE
                 imagen_2.visibility=View.VISIBLE
                 PopupContent(
@@ -240,6 +250,7 @@ class Cards_2(private val activity: Activity) {
                 )
             }
             3 ->{
+                imagen1.setImageResource(R.drawable.t_extintores_5)
                 text.visibility=View.GONE
                 imagen_2.visibility=View.GONE
                 PopupContent(

@@ -70,7 +70,6 @@
             <ImageView
                 android:id="@+id/images_cards"
                 style="@style/AppTheme.img_card"
-                android:background="@drawable/rounded_pop_up"
                 android:src="@drawable/atras_azul"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"

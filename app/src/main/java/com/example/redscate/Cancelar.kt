@@ -11,13 +11,13 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity.LAYOUT_INFLATER_SERVICE
 
 class Cancelar(private val activity: Activity) {
-
     private val inflater = activity.getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater
     private val popupView = inflater.inflate(R.layout.activity_template_cancelar, null)   // actividad del pop up
     private val blurBackground = activity.findViewById<View>(R.id.blur_background_cancelar)  // backgraund
 
     private val buttonSi = popupView.findViewById<TextView>(R.id.button_si)
     private val buttonNo = popupView.findViewById<TextView>(R.id.button_no)
+
 
 
 

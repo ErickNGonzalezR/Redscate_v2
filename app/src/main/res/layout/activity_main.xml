@@ -34,8 +34,10 @@
             style="@style/AppTheme.texto_main"
             android:layout_marginTop="51dp"
             android:layout_marginBottom="10dp"
-            android:text="Tu seguridad es nuestra prioridad.\nIngresa tu nombre para iniciar tu experiencia."
-            android:textSize="18dp" />
+            android:text="Tu seguridad es nuestra prioridad. Regístrate para iniciar"
+            android:textSize="18sp"
+            android:gravity="center"
+            />
 
         <EditText
             android:id="@+id/et_nombre_inicio"
@@ -55,23 +57,29 @@
         <LinearLayout
             android:id="@+id/ingresar"
             style="@style/AppTheme.boton_main"
+            android:clickable="true"
+            android:focusable="true"
             >
             <TextView
+                android:id="@+id/ingresar_2"
                 style="@style/AppTheme.text_main"
-                android:text="INGRSAR"
+                android:text="INGRESAR"
                 />
         </LinearLayout>
 
         <LinearLayout
+            android:clickable="true"
+            android:focusable="true"
             android:id="@+id/rescatista"
             style="@style/AppTheme.boton_main"
-            android:visibility="gone"
+            android:visibility="visible"
             >
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/escudo_1"/>
             <TextView
+                android:id="@+id/rescatista_2"
                 style="@style/AppTheme.text_main"
                 android:text="SOY RESCATISTA"
                 />

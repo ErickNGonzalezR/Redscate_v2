@@ -37,7 +37,7 @@ class Cards_3(private val activity: Activity) {
 
     private val subTitulo = popupView.findViewById<TextView>(R.id.subtitle)
     private val texto = popupView.findViewById<TextView>(R.id.texts_cards)
-    private val imagen = popupView.findViewById<ImageView>(R.id.images_cards)
+    private val imagen3 = popupView.findViewById<ImageView>(R.id.images_cards)
 
     private val template_cards_1 = popupView.findViewById<ConstraintLayout>(R.id.template_cards_1)
     private val template_cards_2 = popupView.findViewById<ConstraintLayout>(R.id.template_cards_2)
@@ -128,6 +128,7 @@ class Cards_3(private val activity: Activity) {
 
         val contenido = when (botonSecundario) {
             1 -> {
+                imagen1.setImageResource(R.drawable.k_1)
                 template_cards_1.visibility = View.VISIBLE
                 template_cards_2.visibility = View.GONE
                 PopupContent(
@@ -139,6 +140,9 @@ class Cards_3(private val activity: Activity) {
             }
 
             2 -> {
+                imagen2.setImageResource(R.drawable.k_2)
+                imagen3.setImageResource(R.drawable.k_3)
+
                 template_cards_1.visibility = View.GONE
                 template_cards_2.visibility = View.VISIBLE
 
@@ -152,6 +156,8 @@ class Cards_3(private val activity: Activity) {
 
             }
             3 -> {
+                imagen2.setImageResource(R.drawable.k_4)
+                imagen3.setImageResource(R.drawable.k_5)
                 template_cards_1.visibility = View.GONE
                 template_cards_2.visibility = View.VISIBLE
 
@@ -165,6 +171,8 @@ class Cards_3(private val activity: Activity) {
 
             }
             4 -> {
+                imagen2.setImageResource(R.drawable.k_6)
+                imagen3.setImageResource(R.drawable.k_7)
                 template_cards_1.visibility = View.GONE
                 template_cards_2.visibility = View.VISIBLE
 

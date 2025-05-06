@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -15,7 +16,9 @@ import com.google.android.material.button.MaterialButton
 
 class MainActivity : AppCompatActivity() {
     private lateinit var btnIngresar: LinearLayout
+
     private lateinit var btnRescatista: LinearLayout
+
     private lateinit var etNombre: EditText
     private lateinit var nombres: String
     private lateinit var sharedPreferences: SharedPreferences
@@ -34,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         // Inicialización de las vistas
         btnIngresar = findViewById(R.id.ingresar)
         btnRescatista = findViewById(R.id.rescatista)
+
         etNombre = findViewById(R.id.et_nombre_inicio)
 
         // Obtener el texto del EditText
@@ -64,12 +68,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clicks(){
+        val btnIngresar2 = findViewById<TextView>(R.id.ingresar_2)
+        val btnRescatista2 = findViewById<TextView>(R.id.rescatista_2)
         btnIngresar = findViewById(R.id.ingresar)
         btnIngresar.setOnClickListener {
             ClickBtnIngrsar()
         }
 
         btnRescatista.setOnClickListener {
+            ClickBtnRescatista()
+        }
+        btnIngresar2.setOnClickListener {
+            ClickBtnIngrsar()
+        }
+
+        btnRescatista2.setOnClickListener {
             ClickBtnRescatista()
         }
     }
