@@ -12,11 +12,12 @@
         android:layout_height="match_parent"
         android:background="@color/black_1">
 
+
         <ImageView
             android:id="@+id/image200"
             android:layout_width="320dp"
             android:layout_height="320dp"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/anillo_blanci"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +26,7 @@
         <TextView
             android:id="@+id/text_200"
             style="@style/AppTheme.distancia"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="20dp"
             android:text="200m"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +36,7 @@
             android:id="@+id/image150"
             android:layout_width="240dp"
             android:layout_height="240dp"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="70dp"
             android:background="@drawable/anillo_blanci"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +45,7 @@
         <TextView
             android:id="@+id/text_150"
             style="@style/AppTheme.distancia"
-            android:layout_marginTop="125dp"
+            android:layout_marginTop="65dp"
             android:text="150m"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +55,7 @@
             android:id="@+id/image100"
             android:layout_width="160dp"
             android:layout_height="160dp"
-            android:layout_marginTop="170dp"
+            android:layout_marginTop="110dp"
             android:background="@drawable/anillo_blanci"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +64,7 @@
         <TextView
             android:id="@+id/text_100"
             style="@style/AppTheme.distancia"
-            android:layout_marginTop="165dp"
+            android:layout_marginTop="105dp"
             android:text="100m"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -73,7 +74,7 @@
             android:id="@+id/image50"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginTop="210dp"
+            android:layout_marginTop="150dp"
             android:background="@drawable/anillo_blanci"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -82,7 +83,7 @@
         <TextView
             android:id="@+id/text_50"
             style="@style/AppTheme.distancia"
-            android:layout_marginTop="205dp"
+            android:layout_marginTop="145dp"
             android:text="50m"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -160,12 +161,13 @@
                 </LinearLayout>
 
                 <TextView
+
                     android:id="@+id/mensaje_enviado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:fontFamily="@font/roboto_regular"
-                    android:text="Buscando rescatistas cercanos"
+                    android:text="Buscando sobrevivientes cercanos"
                     android:textColor="@color/white_1"
                     android:textSize="20dp"
                     app:layout_constraintEnd_toEndOf="parent"

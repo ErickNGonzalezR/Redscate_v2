@@ -14,9 +14,9 @@
 
         <ImageView
             android:id="@+id/image200"
-            android:layout_width="320sp"
-            android:layout_height="320sp"
-            android:layout_marginTop="90sp"
+            android:layout_width="320dp"
+            android:layout_height="320dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/anillo_blanci"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +25,7 @@
         <TextView
             android:id="@+id/text_200"
             style="@style/AppTheme.distancia"
-            android:layout_marginTop="80sp"
+            android:layout_marginTop="20dp"
             android:text="200m"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -33,9 +33,9 @@
 
         <ImageView
             android:id="@+id/image150"
-            android:layout_width="240sp"
-            android:layout_height="240sp"
-            android:layout_marginTop="130sp"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="70dp"
             android:background="@drawable/anillo_blanci"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +44,7 @@
         <TextView
             android:id="@+id/text_150"
             style="@style/AppTheme.distancia"
-            android:layout_marginTop="125sp"
+            android:layout_marginTop="65dp"
             android:text="150m"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,9 +52,9 @@
 
         <ImageView
             android:id="@+id/image100"
-            android:layout_width="160sp"
-            android:layout_height="160sp"
-            android:layout_marginTop="170sp"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="110dp"
             android:background="@drawable/anillo_blanci"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +63,7 @@
         <TextView
             android:id="@+id/text_100"
             style="@style/AppTheme.distancia"
-            android:layout_marginTop="165sp"
+            android:layout_marginTop="105dp"
             android:text="100m"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -71,9 +71,9 @@
 
         <ImageView
             android:id="@+id/image50"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
-            android:layout_marginTop="210sp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="150dp"
             android:background="@drawable/anillo_blanci"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -82,7 +82,7 @@
         <TextView
             android:id="@+id/text_50"
             style="@style/AppTheme.distancia"
-            android:layout_marginTop="205sp"
+            android:layout_marginTop="145dp"
             android:text="50m"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -163,7 +163,7 @@
                     android:id="@+id/mensaje_enviado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30sp"
+                    android:layout_marginTop="20dp"
                     android:fontFamily="@font/roboto_regular"
                     android:text="Buscando rescatistas cercanos"
                     android:textColor="@color/white_1"
@@ -204,9 +204,9 @@
                     android:id="@+id/sonido"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15sp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/rounded_boton"
-                    android:padding="10sp"
+                    android:padding="10dp"
                     android:src="@drawable/sonido" />
             </LinearLayout>
         </LinearLayout>
@@ -216,12 +216,12 @@
             android:id="@+id/btn_autoproteccion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24sp"
-            android:layout_marginBottom="40sp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/rounded_boton_verde"
             android:clickable="true"
             android:gravity="center"
-            android:paddingVertical="10sp"
+            android:paddingVertical="10dp"
             app:layout_constraintBottom_toTopOf="@+id/btn_detener">
 
             <ImageView
@@ -233,7 +233,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/verdana_bold"
-                android:paddingHorizontal="10sp"
+                android:paddingHorizontal="10dp"
                 android:text="AUTOPROTECCIÓN"
                 android:textColor="@color/borde_boton_rojo"
                 android:textSize="20sp" />
@@ -245,12 +245,12 @@
             android:id="@+id/btn_detener"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24sp"
-            android:layout_marginBottom="50sp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginBottom="30dp"
             android:background="@drawable/rounded_boton_rojo"
             android:clickable="true"
             android:gravity="center"
-            android:paddingVertical="10sp"
+            android:paddingVertical="10dp"
             app:layout_constraintBottom_toBottomOf="parent">
 
             <ImageView
@@ -262,7 +262,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/verdana_bold"
-                android:paddingHorizontal="10sp"
+                android:paddingHorizontal="10dp"
                 android:text="DETENER"
                 android:textColor="@color/borde_boton_rojo"
                 android:textSize="20sp" />

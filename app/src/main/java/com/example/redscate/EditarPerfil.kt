@@ -100,36 +100,54 @@ class EditarPerfil : AppCompatActivity() {
             val age = edad.text.toString().trim()
             //val grupoSanguineo = rh.text.toString().trim()
             val contactName = nombreApellidocontacto.text.toString().trim()
-            val contactNumber = telefono.text.toString().trim()
-
-            if (opcionSeleccionada in rhOptions) {
-                // Persistencia de datos
-                editor.putString("nombre", nombre)
-                editor.putString("edad", age)
-                editor.putString("rh", opcionSeleccionada)
-                editor.putString("nombreContacto", contactName)
-                editor.putString("telefono", contactNumber)
-                editor.apply()
-
-                val intent = Intent(this, Perfil::class.java)
-                val gifExito = findViewById<ImageView>(R.id.gifExito)
-
-                gifExito.visibility = View.VISIBLE
-
-                Glide.with(this)
-                    .asGif()
-                    .load(R.drawable.perfil_editado)
-                    .into(gifExito)
-
-// Ocultar el GIF después de unos segundos
-                Handler(Looper.getMainLooper()).postDelayed({
-                    gifExito.visibility = View.GONE
-                }, 5000) // por ejemplo, 2 segundos
-                startActivity(intent)
-            } else {
-                Toast.makeText(this, "❌ RH inválido. Selecciona de la lista.", Toast.LENGTH_SHORT)
-                    .show()
+            val contactNumber = telefono.text.toString().trim()// Validación de nombre
+            if (nombre.isEmpty()) {
+                Toast.makeText(this, "❌ Por favor escriba su nombre", Toast.LENGTH_SHORT).show()
+                nombreApellido.setBackgroundResource(R.drawable.rounded_edit_text_rojo)
+                return@setOnClickListener
             }
+
+// Validación de RH
+            if (opcionSeleccionada !in rhOptions) {
+                Toast.makeText(this, "❌ RH inválido. Selecciona de la lista.", Toast.LENGTH_SHORT).show()
+                spinnerRH.setBackgroundResource(R.drawable.rounded_edit_text_rojo)
+
+                return@setOnClickListener
+            }
+
+// Validación de teléfono (opcional pero si se llena, debe tener 10 dígitos)
+            if (contactNumber.isNotEmpty() && contactNumber.length != 10) {
+                Toast.makeText(this, "❌ El teléfono no está completo", Toast.LENGTH_SHORT).show()
+                telefono.setBackgroundResource(R.drawable.rounded_edit_text_rojo)
+                return@setOnClickListener
+            }
+
+// Guardar datos
+            editor.putString("nombre", nombre)
+            editor.putString("edad", age)
+            editor.putString("rh", opcionSeleccionada)
+            editor.putString("nombreContacto", contactName)
+            editor.putString("telefono", contactNumber)
+            editor.apply()
+
+// Mostrar GIF de éxito
+            val blurBackground =findViewById<View>(R.id.blur_background)
+            val gifExito = findViewById<ImageView>(R.id.gifExito)
+            gifExito.visibility = View.VISIBLE
+            blurBackground.visibility = View.VISIBLE
+
+            Glide.with(this)
+                .asGif()
+                .load(R.drawable.perfil_editado)
+                .into(gifExito)
+
+// Ocultar el GIF después de 5 segundos y abrir perfil
+            Handler(Looper.getMainLooper()).postDelayed({
+                blurBackground.visibility = View.GONE
+                gifExito.visibility = View.GONE
+                startActivity(Intent(this, Perfil::class.java))
+            }, 3500)
+
         }
         val botonAtras = findViewById<ImageView>(R.id.atras)
         botonAtras.setOnClickListener {

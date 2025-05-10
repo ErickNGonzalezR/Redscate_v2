@@ -1,13 +1,18 @@
 package com.example.redscate
 
+import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresPermission
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
@@ -15,6 +20,17 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.button.MaterialButton
 
 class MainActivity : AppCompatActivity() {
+    private val permissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestMultiplePermissions()
+    ) { permissions ->
+        val allGranted = permissions.all { it.value }
+
+        if (allGranted) {
+            Toast.makeText(this, "Todos los permisos concedidos", Toast.LENGTH_SHORT).show()
+            // Aquí puedes iniciar la lógica de Wi-Fi Direct
+        }
+    }
+
     private lateinit var btnIngresar: LinearLayout
 
     private lateinit var btnRescatista: LinearLayout
@@ -23,6 +39,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var nombres: String
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
+    @RequiresPermission(allOf = [Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION])
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +50,7 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
+        solicitarPermisos()
         // Inicialización de las vistas
         btnIngresar = findViewById(R.id.ingresar)
         btnRescatista = findViewById(R.id.rescatista)
@@ -139,6 +156,19 @@ class MainActivity : AppCompatActivity() {
     fun Sobreviviente(){
         val intent = Intent(this, Cards::class.java)
         startActivity(intent)
+    }
+    private fun solicitarPermisos() {
+        val permisos = mutableListOf(
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.ACCESS_WIFI_STATE,
+            Manifest.permission.CHANGE_WIFI_STATE
+        )
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            permisos.add(Manifest.permission.NEARBY_WIFI_DEVICES)
+        }
+
+        permissionLauncher.launch(permisos.toTypedArray())
     }
 
 }

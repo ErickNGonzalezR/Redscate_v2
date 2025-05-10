@@ -124,10 +124,10 @@ class RadarRescatista : AppCompatActivity() {
 
         //brujula
         //compassImageView = findViewById(R.id.compas_imageView) // La imagen que se va a rotar
-        sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
+        /*sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
         magnetometer = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)
-
+*/
         //red
         sharedPreferences = getSharedPreferences(Constants.PREFERENCES_KEY, MODE_PRIVATE)
 
@@ -385,7 +385,7 @@ class RadarRescatista : AppCompatActivity() {
         tresPuntos.setImageResource(R.drawable.tres_puntos_verdes)
         tresPuntos2.setImageResource(R.drawable.tres_puntos_amarrillo)
         mensajeEnviado = findViewById(R.id.mensaje_enviado)
-        mensajeEnviado.text = "Buscando rescatistas cercanos"
+        mensajeEnviado.text = "Buscando sobrevivientes cercanos"
         val sharedPreferences = getSharedPreferences("MyPreferences", Context.MODE_PRIVATE)
         val nombre = sharedPreferences.getString("nombre", "Valor por defecto")
         var message = "1,$lat,$lon,$nombre"
@@ -592,7 +592,6 @@ class RadarRescatista : AppCompatActivity() {
             }
 
             var imgBrujula = findViewById<ImageView>(R.id.compas_imageView)
-
             var textos = listOf(
                 findViewById<TextView>(R.id.text_50),
                 findViewById<TextView>(R.id.text_100),
@@ -627,6 +626,7 @@ class RadarRescatista : AppCompatActivity() {
                 nombre_1.uppercase()
 
                 mensajeE.text = "Sobreviviente $nombre_1 encontrado"
+
                 usuario.text = nombre_1.uppercase()
 
                 if (nivelActivo != -1) {
@@ -654,13 +654,13 @@ class RadarRescatista : AppCompatActivity() {
                         )
                     }
 
-                    imgBrujula.setImageResource(R.drawable.brujula_verde)
+                    //imgBrujula.setImageResource(R.drawable.brujula_verde)
                 }
                 audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
 
                 checkContainer = findViewById(R.id.check_container)
-                checkContainer_2 = findViewById(R.id.check_container_2)
-                distanciaMensaje = findViewById(R.id.distancia_mensaje)
+                //checkContainer_2 = findViewById(R.id.check_container_2)
+                //distanciaMensaje = findViewById(R.id.distancia_mensaje)
             } else{
                 //Toast.makeText(this@Radar_activo, "Hay sobrevivientes cerca !!!", Toast.LENGTH_SHORT).show()
 
