@@ -146,7 +146,7 @@ class EditarPerfil : AppCompatActivity() {
                 blurBackground.visibility = View.GONE
                 gifExito.visibility = View.GONE
                 startActivity(Intent(this, Perfil::class.java))
-            }, 3500)
+            }, 3250)
 
         }
         val botonAtras = findViewById<ImageView>(R.id.atras)
