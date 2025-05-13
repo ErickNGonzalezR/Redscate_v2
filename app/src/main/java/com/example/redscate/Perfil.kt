@@ -53,30 +53,47 @@ class Perfil : AppCompatActivity() {
             startActivity(Intent(this, EditarPerfil::class.java))
         }
 
-        // Botón atrás
-        findViewById<ImageView>(R.id.atras).setOnClickListener {
-            onBackPressedDispatcher.onBackPressed()
-        }
+            // Botón atrás
+            findViewById<ImageView>(R.id.atras).setOnClickListener {
+                when (rol) {
+                    "1" -> {
+                        startActivity(Intent(this, CodigoRescatista::class.java))
 
-        // Botón para cambiar perfil
-        findViewById<TextView>(R.id.btn_cambiar_perfil).setOnClickListener {
-            when (rol) {
-                "0" -> {
-                    editor.putString("perfil", "1").apply()
-                    startActivity(Intent(this, CodigoRescatista::class.java))
-                    Toast.makeText(this, "Cambiaste a Rescatista", Toast.LENGTH_SHORT).show()
+                    }
 
+                    "0" -> {
+                        startActivity(Intent(this, Cards::class.java))
+
+                    }
+
+                    else -> {
+                        Toast.makeText(this, "⚠️ Rol desconocido", Toast.LENGTH_SHORT).show()
+                    }
                 }
-                "1" -> {
-                    editor.putString("perfil", "0").apply()
-                    startActivity(Intent(this, Cards::class.java))
-                    Toast.makeText(this, "Cambiaste a Sobreviviente", Toast.LENGTH_SHORT).show()
+            }
 
-                }
-                else -> {
-                    Toast.makeText(this, "⚠️ Rol desconocido", Toast.LENGTH_SHORT).show()
+            // Botón para cambiar perfil
+            findViewById<TextView>(R.id.btn_cambiar_perfil).setOnClickListener {
+                when (rol) {
+                    "0" -> {
+                        editor.putString("perfil", "1").apply()
+                        startActivity(Intent(this, CodigoRescatista::class.java))
+                        Toast.makeText(this, "Cambiaste a Rescatista", Toast.LENGTH_SHORT).show()
+
+                    }
+
+                    "1" -> {
+                        editor.putString("perfil", "0").apply()
+                        startActivity(Intent(this, Cards::class.java))
+                        Toast.makeText(this, "Cambiaste a Sobreviviente", Toast.LENGTH_SHORT).show()
+
+                    }
+
+                    else -> {
+                        Toast.makeText(this, "⚠️ Rol desconocido", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
         }
     }
-}
+

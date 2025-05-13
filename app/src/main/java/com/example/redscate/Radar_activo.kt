@@ -647,6 +647,10 @@ class Radar_activo : AppCompatActivity(), SensorEventListener {
 
                     imgBrujula.setImageResource(R.drawable.brujula_verde)
                 }
+                val cientocincuenta = findViewById<TextView>(R.id.text_150)
+                if (distancia < 101f || distancia > 150f) {
+                    cientocincuenta.setTextColor(ContextCompat.getColor(this, R.color.black_1))
+                }
                 audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
 
                 checkContainer = findViewById(R.id.check_container)
